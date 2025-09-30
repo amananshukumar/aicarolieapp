@@ -111,7 +111,7 @@ async function uploadToImgBB(file) {
     const base64 = await fileToBase64(file);
     formData.append('image', base64.split(',')[1]);
 
-    const response = await fetch('https://api.imgbb.com/1/upload?key=dbe1e68660cf334eb65c4277efa106e2', {
+    const response = await fetch(`https://api.imgbb.com/1/upload?key=${API_CONFIG.IMGBB_API_KEY}`, {
         method: 'POST',
         body: formData
     });
@@ -173,7 +173,7 @@ async function analyzeWithGroq(imageUrl) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': `Bearer ${API_CONFIG.GROQ_API_KEY}`
         },
         body: JSON.stringify(requestBody)
     });
