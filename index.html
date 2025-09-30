@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalorieVision - Food Calorie Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ CalorieVision</h1>
+            <p>Snap, Upload & Track Your Food's Calories Instantly</p>
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📸</div>
+                <h3>Upload Your Food Photo</h3>
+                <p>Drag & drop or click to upload</p>
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                        📁 Choose File
+                    </button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('cameraInput').click()">
+                        📷 Take Photo
+                    </button>
+                </div>
+                <input type="file" id="fileInput" accept="image/*">
+                <input type="file" id="cameraInput" accept="image/*" capture="environment">
+            </div>
+
+            <div class="preview-section" id="previewSection">
+                <img id="previewImage" class="preview-image" alt="Food preview">
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn btn-primary" onclick="analyzeImage()">
+                        🔍 Analyze Calories
+                    </button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
+                <p class="progress-text-label" id="progressText">Uploading image...</p>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="food-image-section" style="text-align: center; margin-bottom: 30px;">
+                <img id="resultImage" class="preview-image" alt="Analyzed food" style="display: none;">
+            </div>
+            <div class="results-grid" id="resultsGrid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
