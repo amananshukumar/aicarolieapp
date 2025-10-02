@@ -23,7 +23,7 @@ A beautiful, responsive web application that analyzes food images and provides d
 - 🤖 **AI-Powered Analysis** - Uses Groq's Llama 4 Vision model  
 - 📊 **Beautiful UI** - Circular progress indicators and animated cards  
 - 📱 **Fully Responsive** - Works on mobile, tablet, and desktop  
-- ⚡ **Real-time Progress** - Visual feedback during analysis  
+- ⚡ **Real-time Progress** - Visual feedback during analysis  .
 
 ---
 
